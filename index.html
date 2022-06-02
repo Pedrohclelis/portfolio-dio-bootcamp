@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="photos/landscape.png" type="image/x-icon">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="header-container">
+        <div class="checkbox-container">
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="checkbox-label">
+                <div class="trace"></div>
+                <div class="trace"></div>
+                <div class="trace"></div>
+            </label>
+            <div class="menu"></div>
+            <nav class="menu-items">
+                <ul>
+                    <li><a href="#about-me" onclick="uncheckToggle()" target="_blank">About me</a></li>
+                    <li><a href="#technologies" onclick="uncheckToggle()" target="_blank">Technologies</a></li>
+                    <li><a href="#projects" onclick="uncheckToggle()" target="_blank">Project</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="profile-container">
+            <h1>Pedro Lelis</h1>
+            <h2>Fullstack Developer</h2>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/pedrohclelis/">Linkedin</a>
+                <a href="https://github.com/Pedrohclelis">Github</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="about-me topic" id="about me">
+            <div class="topic-container">
+                <div class="topic-title">
+                    <h2>About me</h2>
+                    <p>Some personal informations</p>
+                </div>
+            </div>
+            <div class="topic-text">
+                <p>My name's Pedro. Coursing Computer Science at UNIFESP while taking other online courses to reforce my knowledge. Searching for an opportunity to enter the labor market and apply my studies in practice. Actually, doing the DIO Fullstack Bootcamp with hope to stand out and pass to the next level from the program.</p>
+            </div>
+        </div>
+        <div class="technologies topic" id="technologies">
+            <div class="topic-container">
+                <div class="topic-title">
+                    <h2>Technologies</h2>
+                    <p>Languages that i use</p>
+                </div>
+            </div>
+            <div class="topic-text">
+                <p>From Front-End i use HTML, CSS and JavaScript (vanilla), which i use node.js to be able to use the js console in VSCode, further i know to use WordPress to make quickly sites. By the Back-End, i known Python, C language, PHP in web to connect in MySQL databases hosted with Apache. Moreover, i can use Git and GitHub for code versioning, unity for game develop and media editing with Photoshop and Sony Vegas </p>
+            </div>
+        </div>
+        <div class="projects topic" id="projects">
+            <div class="topic-container">
+                <div class="topic-title">
+                    <h2>Projects</h2>
+                    <p>Meet my minesweeper web</p>
+                </div>
+            </div>
+            <div class="topic-text">
+                <p>I am building my portfolio from the beginning, now that i have studied enough to start coding greater projects. My main project is a minesweeper web that made me learn a lot about events, DOM manipullation and responsivity in js, i also putted some sounds to animate the game too. It's available to play and check in my public repositories</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Created by Pedrohclelis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

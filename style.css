@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amatic SC', sans-serif;
+}
+
+/*===================== HEADER =====================*/
+
+.header-container {
+    background: linear-gradient(-45deg, #5013a0, #102363, #195f7a, #26755d, #ffda0a);
+    background-size: 400% 400%;
+    animation: backgroundSwim 8s ease-in-out infinite forwards;
+
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes backgroundSwim {
+    0% {
+        background-position: 0% 80%;
+    }
+    50% {
+        background-position: 80% 100%;
+    }
+    100% {
+        background-position: 0% 90%;
+    }
+}
+
+
+/*===================== MENU =====================*/
+
+.checkbox-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.checkbox-label {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 999;
+
+    position: relative;
+
+    transition: 400ms ease-in-out 0;
+}
+
+#toggle {
+    display: none;
+}
+
+.checkbox-label .trace {
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    height: 2px;
+    border-radius: 4px;
+
+    transition: 0.5s ease-in-out;
+    position: absolute;
+}
+
+.checkbox-container .trace:nth-child(1) {
+    transform: rotate(0);
+    top: 26px;
+}
+.checkbox-container .trace:nth-child(2) {
+    transform: rotate(0);
+    top: 46px;
+}
+.checkbox-container .trace:nth-child(3) {
+    transform: rotate(0);
+    top: 66px;
+}
+
+#toggle:checked + label .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47px;
+    background-color: #2E1C2B;
+}
+#toggle:checked + label .trace:nth-child(2) {
+    transform: translateX(-100px);
+    opacity: 0;
+    visibility: hidden;
+    background-color: #2E1C2B;
+}
+#toggle:checked + label .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+    background-color: #2E1C2B;
+}
+
+/*============ NAV ============*/
+
+.menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+
+    background: white;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100%;
+    box-shadow: 0 0 0 0 white;
+
+    z-index: -1;
+
+    transition: 400ms ease-in-out;
+}
+
+.menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+    transition: 400ms ease-in-out;
+}
+
+.menu-items ul {
+    list-style-type: none;
+}
+
+.menu-items ul li a {
+    margin: 10px 0;
+    color: #2E1C2B;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 50px;
+}
+
+#toggle:checked + .checkbox-label {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#toggle:checked ~ .menu {
+    position: fixed;
+    top: -400px;
+    right: 0;
+    box-shadow: 0 0 0 70vmax white;
+    z-index: 1; 
+}
+
+#toggle:checked ~ .menu-items {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/*============ PROFILE ============*/
+.profile-container {
+    color: white;
+}
+
+.profile-container h1 {
+    font-size: 8em;
+    text-align: center;
+    letter-spacing: 4px;
+    margin: 15px;
+}
+
+.profile-container h2 {
+    font-size: 3em;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.social-media {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+} 
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    font-size: 1.5rem;
+    padding: 1rem 4rem;
+    
+    min-width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.5s cubic-bezier(0.55, 0.025, 0.675. 0.97);
+}
+
+.social-media a:hover {
+    color: #195f7a;
+    background-color: rgba(255, 255, 255, 0.986);
+    transition: 0.3s;
+} 
+
+/*===================== MAIN =====================*/
+
+.topic {
+    max-width: 1400px;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.topic:nth-child(1), .topic:nth-child(3){
+    flex-direction: row-reverse;
+}
+
+.topic-container {
+    background-image: url(photos/landscape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+    filter: grayscale(0.5);
+    transition: 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 400px;
+}
+
+.topic-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.topic-title::before {
+    content: '';
+    border: 1px solid white;
+
+    width: 100px;
+    height: 100px;
+
+    opacity: 0;
+    position: absolute;
+
+    transition: 0.3s;
+}
+
+.topic-title h2 {
+    font-size: 4em;
+    color: white;
+}
+
+.topic-title p {
+    color: rgb(233, 233, 233);
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.topic-text {
+    padding: 30px;
+    width: 60%;
+    letter-spacing: 1px;
+}
+
+.topic-text p {
+    color: rgb(83, 83, 83);
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+.topic-container:hover {
+    filter: grayscale(0);
+}
+
+.topic-container:hover .topic-title::before {
+    width: 400px;
+    height: 300px;
+    opacity: 1;
+}
+
+.topic-container:hover .topic-title p {
+    visibility: visible;
+    opacity: 1;
+    font-size: 2em;
+}
+
+
+/*===================== FOOTER =====================*/
+
+.footer {
+    height: 100px;
+    background-color: #195f7a;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    color: white;
+    font-size: 1.5em;
+}
+
+@media (max-width: 800px){
+    .profile-container h1 {
+        font-size: 7em;
+    }
+    .profile-container h2 {
+        font-size: 3em;
+    }
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 10px;
+    }
+    .social-media a {
+        font-size: 2em;
+    }
+
+    .topic {
+        max-width: 1400px;
+        margin: 70px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        padding: 10px;
+    }
+
+    .topic-container {
+        width: 420px;
+        height: 420px;
+        flex-direction: column;
+    }
+
+    .topic:nth-child(1), .topic:nth-child(3){
+        flex-direction: column;
+    }
+
+    .topic-text {
+        text-align: center;
+        padding: 30px;
+        width: 90%;
+        letter-spacing: 1px;
+        margin-top: 1.5rem;
+        margin-right: 0;
+    }
+}
